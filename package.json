@@ -1,0 +1,55 @@
+{
+  "name": "athens-booking",
+  "version": "0.1.0",
+  "main": "public/electron.js",
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "watch:css": "postcss src/styles/tailwind.scss -o src/styles/index.scss",
+    "watch": "chokidar \"./src/**/*.js\" -c \"npm run watch:css\"",
+    "dev": "concurrently -k \"cross-env BROWSER=none npm start\" \"npm:electron\" \"npm run watch\"",
+    "electron": "wait-on tcp:3000 && electron ."
+  },
+  "dependencies": {
+    "@craco/craco": "^6.4.0",
+    "@reduxjs/toolkit": "^1.6.2",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "cross-env": "^7.0.3",
+    "node-sass": "^6.0.1",
+    "postcss-cli": "^8.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.0",
+    "web-vitals": "^1.0.1"
+  },
+  "devDependencies": {
+    "autoprefix": "^1.0.1",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^6.3.0",
+    "electron": "^15.3.0",
+    "electron-is-dev": "^2.0.0",
+    "postcss": "^8.3.11",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
+    "wait-on": "^6.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
